@@ -21,4 +21,9 @@ public class GreetingController {
 	public Greeting addValues(@RequestParam(value = "v1", defaultValue = "0") int v1, @RequestParam(value = "v2", defaultValue = "0") int v2) {
 		return new Greeting(counter.incrementAndGet(), String.join(" ", "Sum of Two Values are:", String.valueOf(v1+v2)));
 	}
+	
+	@GetMapping("/subValue")
+	public Greeting subValues(@RequestParam(value = "v1", defaultValue = "0") int v1, @RequestParam(value = "v2", defaultValue = "0") int v2) {
+		return new Greeting(counter.incrementAndGet(), String.join(" ", "Difference of Two Values are:", String.valueOf(v1+v2)));
+	}
 }
