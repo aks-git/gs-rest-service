@@ -24,6 +24,16 @@ public class GreetingController {
 	
 	@GetMapping("/subValue")
 	public Greeting subValues(@RequestParam(value = "v1", defaultValue = "0") int v1, @RequestParam(value = "v2", defaultValue = "0") int v2) {
-		return new Greeting(counter.incrementAndGet(), String.join(" ", "Difference of Two Values are:", String.valueOf(v1+v2)));
+		return new Greeting(counter.incrementAndGet(), String.join(" ", "Difference of Two Values are:", String.valueOf(v1-v2)));
+	}
+	
+	@GetMapping("/mulValue")
+	public Greeting mulValues(@RequestParam(value = "v1", defaultValue = "0") int v1, @RequestParam(value = "v2", defaultValue = "0") int v2) {
+		return new Greeting(counter.incrementAndGet(), String.join(" ", "Multiply of Two Values are:", String.valueOf(v1*v2)));
+	}
+	
+	@GetMapping("/divValue")
+	public Greeting divValues(@RequestParam(value = "v1", defaultValue = "0") int v1, @RequestParam(value = "v2", defaultValue = "0") int v2) {
+		return new Greeting(counter.incrementAndGet(), String.join(" ", "Dividing of Two Values are:", String.valueOf(v1/v2)));
 	}
 }
